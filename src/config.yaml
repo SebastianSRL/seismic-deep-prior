@@ -1,0 +1,5 @@
+TRAIN:
+  epochs: 1
+MODEL:
+  nfilters: 4
+  depth: 3

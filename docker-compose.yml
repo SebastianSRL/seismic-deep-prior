@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    container_name: seismic-deep-prior
+    command: python src/main.py
+    ports:
+      - 5678:5678
+    volumes:
+      - .:/app
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
